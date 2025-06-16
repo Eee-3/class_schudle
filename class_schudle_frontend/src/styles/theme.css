@@ -1,0 +1,250 @@
+/* 深色模式全局样式 */
+
+/* 根元素变量定义 */
+:root {
+  /* 浅色模式颜色 */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #ecf0f1;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --text-tertiary: #4a5568;
+  --border-primary: #e1e8ed;
+  --border-secondary: rgba(0, 0, 0, 0.1);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-heavy: rgba(0, 0, 0, 0.3);
+  
+  /* 主题色 */
+  --color-primary: #409eff;
+  --color-success: #27ae60;
+  --color-warning: #f39c12;
+  --color-danger: #e74c3c;
+  --color-info: #3498db;
+}
+
+/* 深色模式颜色覆盖 */
+.dark {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #262727;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #e5eaf3;
+  --text-secondary: #cfd3dc;
+  --text-tertiary: #a0aec0;
+  --border-primary: #4c4d4f;
+  --border-secondary: rgba(255, 255, 255, 0.1);
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-heavy: rgba(0, 0, 0, 0.6);
+  
+  /* 深色模式下的主题色调整 */
+  --color-primary: #409eff;
+  --color-success: #27ae60;
+  --color-warning: #f39c12;
+  --color-danger: #e74c3c;
+  --color-info: #409eff;
+}
+
+/* 全局过渡动画 */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* 深色模式下的滚动条样式 */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Element Plus 深色模式适配 */
+.dark .el-button {
+  --el-button-bg-color: var(--bg-secondary);
+  --el-button-border-color: var(--border-primary);
+  --el-button-text-color: var(--text-primary);
+}
+
+.dark .el-button:hover {
+  --el-button-hover-bg-color: var(--bg-tertiary);
+  --el-button-hover-border-color: var(--border-primary);
+  --el-button-hover-text-color: var(--text-primary);
+}
+
+.dark .el-card {
+  --el-card-bg-color: var(--bg-primary);
+  --el-card-border-color: var(--border-primary);
+}
+
+.dark .el-table {
+  --el-table-bg-color: var(--bg-primary);
+  --el-table-tr-bg-color: var(--bg-primary);
+  --el-table-header-bg-color: var(--bg-secondary);
+  --el-table-border-color: var(--border-primary);
+  --el-table-text-color: var(--text-primary);
+}
+
+.dark .el-input {
+  --el-input-bg-color: var(--bg-secondary);
+  --el-input-border-color: var(--border-primary);
+  --el-input-text-color: var(--text-primary);
+}
+
+.dark .el-select {
+  --el-select-input-color: var(--text-primary);
+  --el-select-input-focus-border-color: var(--color-primary);
+}
+
+.dark .el-dialog {
+  --el-dialog-bg-color: var(--bg-primary);
+  --el-dialog-border-color: var(--border-primary);
+}
+
+.dark .el-form-item__label {
+  color: var(--text-primary) !important;
+}
+
+.dark .el-alert {
+  --el-alert-bg-color: var(--bg-secondary);
+  --el-alert-border-color: var(--border-primary);
+}
+
+/* 深色模式下的特殊样式 */
+.dark .el-radio-button__inner {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-primary);
+  color: var(--text-primary);
+}
+
+.dark .el-radio-button__original-radio:checked + .el-radio-button__inner {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.dark .el-message {
+  background-color: var(--bg-primary);
+  border-color: var(--border-primary);
+  color: var(--text-primary);
+}
+
+.dark .el-message--success {
+  background-color: rgba(39, 174, 96, 0.1);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.dark .el-message--warning {
+  background-color: rgba(243, 156, 18, 0.1);
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.dark .el-message--error {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.dark .el-message--info {
+  background-color: rgba(64, 158, 255, 0.1);
+  border-color: var(--color-info);
+  color: var(--color-info);
+}
+
+/* 深色模式下的表格样式优化 */
+.dark .el-table__empty-text {
+  color: var(--text-secondary);
+}
+
+.dark .el-table th.el-table__cell {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom-color: var(--border-primary);
+}
+
+.dark .el-table td.el-table__cell {
+  border-bottom-color: var(--border-primary);
+}
+
+.dark .el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell {
+  background-color: var(--bg-secondary);
+}
+
+/* 深色模式下的时间选择器样式 */
+.dark .el-time-panel {
+  background-color: var(--bg-primary);
+  border-color: var(--border-primary);
+}
+
+.dark .el-time-panel__content {
+  color: var(--text-primary);
+}
+
+/* 深色模式下的颜色选择器样式 */
+.dark .el-color-picker__panel {
+  background-color: var(--bg-primary);
+  border-color: var(--border-primary);
+}
+
+/* 深色模式下的下拉菜单样式 */
+.dark .el-select-dropdown {
+  background-color: var(--bg-primary);
+  border-color: var(--border-primary);
+}
+
+.dark .el-select-dropdown__item {
+  color: var(--text-primary);
+}
+
+.dark .el-select-dropdown__item:hover {
+  background-color: var(--bg-secondary);
+}
+
+.dark .el-select-dropdown__item.selected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* 深色模式下的标签样式 */
+.dark .el-tag {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-primary);
+  color: var(--text-primary);
+}
+
+.dark .el-tag--info {
+  background-color: rgba(64, 158, 255, 0.1);
+  border-color: var(--color-info);
+  color: var(--color-info);
+}
+
+.dark .el-tag--success {
+  background-color: rgba(39, 174, 96, 0.1);
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.dark .el-tag--warning {
+  background-color: rgba(243, 156, 18, 0.1);
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.dark .el-tag--danger {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}

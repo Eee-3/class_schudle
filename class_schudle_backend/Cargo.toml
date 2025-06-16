@@ -1,0 +1,20 @@
+[package]
+name = "class-schedule-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.4"
+actix-cors = "0.7"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1.0"
+log = "0.4"
+env_logger = "0.10"
+diesel = { version = "2.1", features = ["sqlite", "chrono", "uuid"] }
+diesel_migrations = "2.1"
+libsqlite3-sys = { version = "0.27", features = ["bundled"] }
+dotenvy = "0.15"
